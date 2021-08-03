@@ -22,5 +22,16 @@ class UserAuthController extends Controller
         'password' => bcrypt($fields['password'])
         // 'password' => Hash::make($fields['password'])]);])
         ]);
-    }
+
+    $token = $user->createToken('apptoken')->plainTextToken();
+
+    $response = [
+        'user' => $user,
+        'token' => $token
+    ];
+
+    
+  }
+
+
 }
