@@ -23,7 +23,7 @@ class UserAuthController extends Controller
         // 'password' => Hash::make($fields['password'])]);])
         ]);
 
-    $token = $user->createToken('apptoken')->plainTextToken();
+    $token = $user->createToken('app_token')->plainTextToken();
 
     $response = [
         'user' => $user,
