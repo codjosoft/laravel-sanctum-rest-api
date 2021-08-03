@@ -40,7 +40,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 /* route resource for product 
 * resource product routes
-*/
+*/ 
 //Route::resource('product', ProductController::class);
 
 
