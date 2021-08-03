@@ -24,6 +24,7 @@ class ProductController extends Controller
      */
     public function create(Request $request)
     {
+
         $Product= new Product();
         $Product->slug = $request->slug;
         $Product->name = $request->name;
@@ -41,7 +42,14 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // request->validation
+        $request->validate([
+            'name' => 'required',
+            'price' => 'required',
+            'slug' => 'required',
+        ]);
+        return Product::create($request->all());
+
     }
 
     /**
