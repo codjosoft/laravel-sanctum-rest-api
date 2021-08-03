@@ -60,7 +60,7 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
+        return Product::findOrFail($id);
     }
 
     /**
@@ -83,7 +83,10 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //update product all fields
+        $Product = Product::findOrFail($id);
+        $Product->update($request->all());
+        return $Product;
     }
 
     /**
