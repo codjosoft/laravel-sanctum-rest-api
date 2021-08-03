@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UserAuthController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -15,6 +16,7 @@ use App\Http\Controllers\ProductController;
 */
 
 //Public routes
+Route::post('/register', [UserAuthController::class, 'register']);
 Route::get('/product', [ProductController::class, 'index'])->name('index');
 Route::get('product/search/{name}', [ProductController::class, 'search']);
 Route::get('product/{id}', [ProductController::class, 'show']);
