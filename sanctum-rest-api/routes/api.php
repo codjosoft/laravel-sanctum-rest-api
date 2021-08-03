@@ -14,10 +14,21 @@ use App\Http\Controllers\ProductController;
 |
 */
 
+//Public routes
+Route::get('/product', [ProductController::class, 'index'])->name('index');
+Route::get('product/search/{name}', [ProductController::class, 'search']);
+Route::get('product/{id}', [ProductController::class, 'show']);
+
+
+/*
+* protected routes
+*/
 //route middleware auth sanctum
 Route::group(['middleware' => 'auth:sanctum'], function () {
     //route middleware auth
-    Route::post('product/search/{name}', [ProductController::class, 'search']);
+    Route::post('/store', [ProductController::class, 'store'])->name('store');
+    Route::put('product/{id}', [ProductController::class, 'update']);
+    Route::delete('product/{id}', [ProductController::class, 'destroy']);
 });
 
 
@@ -25,14 +36,17 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// Route::get('/product', [ProductController::class, 'index'])->name('index');
 
-//route resource for product
-Route::resource('product', ProductController::class);
- 
+
+/* route resource for product 
+* resource product routes
+*/
+//Route::resource('product', ProductController::class);
+
+
+
+/* 
 Route::prefix('/product')->group( function () {
-    Route::post('/store', [ProductController::class, 'store'])->name('store');
   
-    }
-  );
-  
+    });
+  */

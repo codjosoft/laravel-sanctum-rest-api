@@ -16,6 +16,20 @@
                 <th>Action</th>
               </thead>
               <tbody>
+                    <!-- v-for="item in items" -->
+                    v-for="item in items"
+                    :key="item.id"
+                    :class="{'bg-white': item.id === selectedItem}"
+                    :style="{'text-align': 'center'}"
+                    :id="item.id"
+                    :data-id="item.id"
+                    :data-name="item.name"
+                    :data-price="item.price"
+                    :data-description="item.description"
+                    :data-slug="item.slug"
+                    :data-action="item.action"
+                    
+
                 <tr>
                   <td data-label="Name">Dinesh</td>
                   <td data-label="Age">34</td>
