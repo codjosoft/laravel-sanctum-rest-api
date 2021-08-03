@@ -22,13 +22,17 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        $newMessage          = new Product();
-        // $newMessage->user_id = Auth::id();
-        // $newMessage->chat_room_id = $roomId;
+        $Product= new Product();
+        $Product->slug = $request->slug;
+        $Product->name = $request->name;
+        $Product->price = $request->price;
+        $Product->description = $request->description;
+
         // $newMessage->message = $request->message;
-        $newMessage->save();
+        $Product->save();
+        return $Product;
     }
 
     /**
