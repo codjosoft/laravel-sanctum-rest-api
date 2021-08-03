@@ -30,9 +30,7 @@ class ProductController extends Controller
         $Product->price = $request->price;
         $Product->description = $request->description;
 
-        // $newMessage->message = $request->message;
-        $Product->save();
-        return $Product;
+        return $Product->save();
     }
 
     /**

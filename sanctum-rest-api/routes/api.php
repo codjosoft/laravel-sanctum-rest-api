@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use Http\Controllers\ProductController;
+use App\Http\Controllers\ProductController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -24,7 +24,7 @@ Route::get('/product', function () {
 });
  
 Route::prefix('/product')->group( function () {
-    Route::post('/store', [ProductController::class, 'store'])->name('store');
+    Route::post('/store', [ProductController::class, 'create'])->name('store');
     Route::put('/{id}', [ProductController::class, 'update'])->name('update');
     Route::delete('/{id}', [ProductController::class, 'destroy'])->name('delete');
   
