@@ -30,7 +30,8 @@ class UserAuthController extends Controller
         'token' => $token
     ];
 
-    
+        // return response($response, 201)->header('Content-Type', 'application/json');
+        return response($response, 201);
   }
 
 
