@@ -24,10 +24,8 @@ Route::get('/product', [ProductController::class, 'index'])->name('index');
 Route::resource('product', ProductController::class);
  
 Route::prefix('/product')->group( function () {
-    Route::post('/create', [ProductController::class, 'create'])->name('create');
+    Route::post('/search', [ProductController::class, 'search']);
     Route::post('/store', [ProductController::class, 'store'])->name('store');
-//     Route::put('/{id}', [ProductController::class, 'update'])->name('update');
-//     Route::delete('/{id}', [ProductController::class, 'destroy'])->name('delete');
   
     }
   );
