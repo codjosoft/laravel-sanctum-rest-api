@@ -17,7 +17,7 @@ use App\Http\Controllers\ProductController;
 //route middleware auth sanctum
 Route::group(['middleware' => 'auth:sanctum'], function () {
     //route middleware auth
-    Route::post('/search/{name}', [ProductController::class, 'search']);
+    Route::post('product/search/{name}', [ProductController::class, 'search']);
 });
 
 
