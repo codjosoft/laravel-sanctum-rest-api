@@ -3,7 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\UserAuthController;
+use App\Http\Controllers\AuthController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -15,22 +15,30 @@ use App\Http\Controllers\UserAuthController;
 |
 */
 
-//Public routes
-Route::post('/register', [UserAuthController::class, 'register']);
-Route::get('/product', [ProductController::class, 'index'])->name('index');
-Route::get('product/search/{name}', [ProductController::class, 'search']);
-Route::get('product/{id}', [ProductController::class, 'show']);
+Route::middleware('auth:api')->get('/user', function (Request $request) {
+    return $request->user();
+});
 
+// Route::get('/product', [ProductController::class, 'index'])->name('index');
 
+//route resource for product
 /*
-* protected routes
+* Public routes
+*
 */
-//route middleware auth sanctum
-Route::group(['middleware' => 'auth:sanctum'], function () {
-    //route middleware auth
-    Route::post('/store', [ProductController::class, 'store'])->name('store');
-    Route::put('product/{id}', [ProductController::class, 'update']);
-    Route::delete('product/{id}', [ProductController::class, 'destroy']);
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
+Route::get('/product', [ProductController::class, 'index']);
+Route::get('/product/{id}', [ProductController::class, 'show']);
+Route::get('/product/search/{name}', [ProductController::class, 'search']);
+
+
+// Protected routes
+Route::group(['middleware' => ['auth:sanctum']], function () {
+    Route::post('/product', [ProductController::class, 'store']);
+    Route::put('/product/{id}', [ProductController::class, 'update']);
+    Route::delete('/product/{id}', [ProductController::class, 'destroy']);
+    Route::post('/logout', [AuthController::class, 'logout']);
 });
 
 
@@ -52,3 +60,4 @@ Route::prefix('/product')->group( function () {
   
     });
   */
+
