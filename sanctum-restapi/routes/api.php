@@ -27,20 +27,18 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 *
 */
 Route::post('/register', [AuthController::class, 'register']);
-Route::get('/product', [ProductController::class, 'index'])->name('index');
-Route::get('product/search/{name}', [ProductController::class, 'search']);
-Route::get('product/{id}', [ProductController::class, 'show']);
+Route::post('/login', [AuthController::class, 'login']);
+Route::get('/product', [ProductController::class, 'index']);
+Route::get('/product/{id}', [ProductController::class, 'show']);
+Route::get('/product/search/{name}', [ProductController::class, 'search']);
 
 
-/*
-* protected routes
-*/
-//route middleware auth sanctum
-Route::group(['middleware' => 'auth:sanctum'], function () {
-    //route middleware auth
-    Route::post('/store', [ProductController::class, 'store'])->name('store');
-    Route::put('product/{id}', [ProductController::class, 'update']);
-    Route::delete('product/{id}', [ProductController::class, 'destroy']);
+// Protected routes
+Route::group(['middleware' => ['auth:sanctum']], function () {
+    Route::post('/product', [ProductController::class, 'store']);
+    Route::put('/product/{id}', [ProductController::class, 'update']);
+    Route::delete('/product/{id}', [ProductController::class, 'destroy']);
+    Route::post('/logout', [AuthController::class, 'logout']);
 });
 
 
