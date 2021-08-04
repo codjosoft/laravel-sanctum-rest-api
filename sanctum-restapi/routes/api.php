@@ -22,7 +22,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 //route resource for product
 //Public routes
-Route::post('/register', [UserAuthController::class, 'register']);
+Route::post('/register', [AuthController::class, 'register']);
 Route::get('/product', [ProductController::class, 'index'])->name('index');
 Route::get('product/search/{name}', [ProductController::class, 'search']);
 Route::get('product/{id}', [ProductController::class, 'show']);
