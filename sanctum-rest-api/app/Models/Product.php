@@ -15,4 +15,5 @@ class Product extends Model
         'description',
         'name'
     ];
+    protected $date = 'created_at';
 }
