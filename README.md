@@ -1,6 +1,6 @@
 <p align="center"> <a href="_blank">
-<img src="http://www.codjosoft.tech/favicon_io/android-chrome-192x192.png" width="300"></a>
-
+<img src="http://www.codjosoft.tech/favicon_io/android-chrome-192x192.png" width="100"></a>
+</p>
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="300"></a></p>
 
