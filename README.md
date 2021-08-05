@@ -1,8 +1,7 @@
-<p align="center"> <a href="_blank">
-<img src="http://www.codjosoft.tech/favicon_io/android-chrome-192x192.png" width="100"></a>
-</p>
 
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="300"></a></p>
+<p align="center">
+<a><img src="http://www.codjosoft.tech/favicon_io/android-chrome-192x192.png" width="100"></a>
+<a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="300"></a></p>
 
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
@@ -23,10 +22,11 @@ Simple rest API with laravel Sanctum. Request is made to this endpoint to <br>
 - **[demo](https://codjosft-rest-api.herokuapp.com/)**
 
 ## Endpoints
-- headers
- ``` Accept: application/json ```
- ``` Content-Type: application/json ```
- ``` Token: <yourtoken> ```
+ headers
+ ``` Accept: application/json
+     Content-Type: application/json
+     Token: <yourtoken> 
+  ```
 NB: you will recieve a token on register/login response
 
 - GET REQUEST
