@@ -21,3 +21,8 @@ Homestead.yaml
 Homestead.json
 /.vagrant
 .phpunit.result.cache
+
+notes.md
+sanctum-rest-api/notes.md
+
+

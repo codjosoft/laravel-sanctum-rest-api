@@ -26,9 +26,14 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 * Public routes
 *
 */
+
+
+/**************************** */
+Route::get('/product', [\App\Http\Controllers\Api\ProductController::class, 'index']);
+/******************************** */
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
-Route::get('/product', [ProductController::class, 'index']);
+// Route::get('/product', [ProductController::class, 'index']);
 Route::get('/product/{id}', [ProductController::class, 'show']);
 Route::get('/product/search/{name}', [ProductController::class, 'search']);
 
@@ -47,7 +52,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::get('/products', [\App\Http\Controllers\Api\ProductController::class, 'index']);
+
 
 /* route resource for product 
 * resource product routes

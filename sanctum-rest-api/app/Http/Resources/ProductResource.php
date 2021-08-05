@@ -23,4 +23,16 @@ class ProductResource extends JsonResource
             'date' => $this->created_at->format('Y-m-d H:i:s')
         ];
     }
+
+    //to single array
+    public function toSingleArray()
+    {   
+        return [
+            'id' => $this->id,
+            'name' => $this->name,
+            'description' => $this->description,
+            'price' => $this->price,
+            'date' => $this->created_at->format('Y-m-d H:i:s')
+        ];  
+    }
 } 

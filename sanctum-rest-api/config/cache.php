@@ -33,6 +33,10 @@ return [
 
     'stores' => [
 
+        'product' =>[
+            'name' => 'subarray'
+        ],
+
         'apc' => [
             'driver' => 'apc',
         ],
