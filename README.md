@@ -25,6 +25,9 @@ Simple rest API with laravel Sanctum. Request is made to this endpoint to <br>
 - headers
  ``` Accept: application/json ```
  ``` Content-Type: application/json ```
+ ``` Token: <yourtoken> ```
+NB: you will recieve a token on register/login response
+
 - GET REQUEST
 
 - get all products
@@ -42,9 +45,32 @@ POST REQUEST
 
 - login
  ```https://codjosft-rest-api.herokuapp.com/api/login``` 
+NB: default login 
+
+``` email : admin@codjosoft.tech ```
+``` password : admin ```
 
 - save product
- ```https://codjosft-rest-api.herokuapp.com/api/login``` 
+ ```https://codjosft-rest-api.herokuapp.com/api/product```
+
+```    request body {
+        "name": "product name",
+        "description": "product description",
+        "price": "product price",
+        "slug": "slug here"
+
+    } 
+  ``` 
+  - delete product
+  DELETE 
+  ```https://codjosft-rest-api.herokuapp.com/api/product/{id}```
+
+ - update product
+  PUT
+  ```https://codjosft-rest-api.herokuapp.com/api/product/{id}```
+
+- logout
+ post  ```https://codjosft-rest-api.herokuapp.com/api/logout```
 
 
 ## Installation
