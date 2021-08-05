@@ -1,5 +1,7 @@
+<p align="center"> <a href="http://www.codjosoft.tech/favicon_io/android-chrome-192x192.png" width="300"></a>
 
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="300"></a></p>
 
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
@@ -18,6 +20,32 @@ Simple rest API with laravel Sanctum. Request is made to this endpoint to <br>
 ## Demo
 
 - **[demo](https://codjosft-rest-api.herokuapp.com/)**
+
+## Endpoints
+- headers
+ ``` Accept: application/json ```
+ ``` Content-Type: application/json ```
+- GET REQUEST
+
+- get all products
+  ```https://codjosft-rest-api.herokuapp.com/api/products```
+- search product
+  ```https://codjosft-rest-api.herokuapp.com/api/product/search/{name}```
+- show product
+  ```https://codjosft-rest-api.herokuapp.com/api/product/{id}```
+
+
+POST REQUEST
+
+- register
+ ```https://codjosft-rest-api.herokuapp.com/api/register``` 
+
+- login
+ ```https://codjosft-rest-api.herokuapp.com/api/login``` 
+
+- save product
+ ```https://codjosft-rest-api.herokuapp.com/api/login``` 
+
 
 ## Installation
 
