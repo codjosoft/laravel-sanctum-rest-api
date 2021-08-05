@@ -9,7 +9,12 @@
 
 ## About 
 
-Simple rest API with laravel Sanctum. Request is made to this endpoint to <br>
+Simple rest API with laravel Sanctum. <br>
+1. Server-side API caching to ensure read responses are fast. <br>
+2. The codebase should is clean, maintainable and reusable. <br>
+3. The application API routes are intuitive and easy to navigate.<br>
+
+Request is made to this endpoint to <br>
 
 - get all the products
 - create new product
