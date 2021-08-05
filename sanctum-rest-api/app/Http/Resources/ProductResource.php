@@ -23,4 +23,4 @@ class ProductResource extends JsonResource
             'date' => $this->created_at->format('Y-m-d H:i:s')
         ];
     }
-}
+} 
